@@ -40,8 +40,8 @@ with lib;
   # Allow the user to log in as root without a password.
   users.users.root.initialHashedPassword = mkOverride 999 "";
 
-  # shrink boot partition to 25MB
-  sdImage.bootSize = mkOverride 1100 25;
+  # shrink boot partition to 25MB (deprecated)
+  # sdImage.bootSize = mkOverride 1100 25;
 
   # disable Grub by default, since no boards use it
   boot.loader.grub.enable = mkDefault false;

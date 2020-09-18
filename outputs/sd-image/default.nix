@@ -8,7 +8,7 @@ let
         <image>
       ];
 
-      sdImage.enable = true;
+      #sdImage.enable = true;
     };
   };
 in

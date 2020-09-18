@@ -10,15 +10,18 @@ in
   hardware.enableRedistributableFirmware = false;
 
   # specify a good kernel version
-  boot.kernelPackages = pkgs.linuxPackages_5_0;
+  boot.kernelPackages = pkgs.linuxPackages_5_4;
 
   # do our own boot-loader
   boot.loader.grub.enable = false;
   boot.loader.systemd-boot.enable = false;
   boot.loader.generic-extlinux-compatible.enable = false;
 
+  # no firmware for our board for now
+  sdImage.populateFirmwareCommands = "";
+
   # build & install boot loader
-  sdImage.populateBootCommands = let
+  sdImage.populateRootCommands = let
     kernel = toradex_apalis_imx6.platform.kernelTarget;
     init = "${config.system.build.toplevel}/init";
     root = "/dev/mmcblk2p2";
