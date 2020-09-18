@@ -14,7 +14,7 @@ with builtins;
     kernelExtraConfig = ''
     '';
     gcc = {
-      cpu = "cortex-a9";
+      arch = "armv7-a";
       fpu = "neon";
     };
   };
