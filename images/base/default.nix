@@ -33,5 +33,5 @@ let platform = config.nixpkgs.crossSystem.platform.name; in
   ];
 
   networking.hostName = lib.mkDefault "nixos-on-${platform}";
-  sdImage.imageBaseName = lib.mkDefault "nixos-on-${platform}";
+  #sdImage.imageBaseName = lib.mkDefault "nixos-on-${platform}";
 }

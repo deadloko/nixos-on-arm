@@ -1,9 +1,8 @@
-
 let
   nixos = import <nixpkgs/nixos> {
     configuration = { ... }: {
       imports = [
-        <nixpkgs/nixos/modules/installer/cd-dvd/sd-image.nix>
+        <nixpkgs/nixos/modules/installer/cd-dvd/system-tezi.nix>
         <machine>
         <image>
       ];
@@ -12,6 +11,6 @@ let
     };
   };
 in
-nixos.config.system.build.sdImage // {
+nixos.config.system.build.teziTarballs // {
   inherit (nixos) pkgs system config;
 }
