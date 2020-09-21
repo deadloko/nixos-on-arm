@@ -212,6 +212,7 @@ in {
     cp ${uEnv} $out/tezi-image/uEnv.txt
     cp ${prepareScript} $out/tezi-image/prepare.sh
     cp ${wrapupScript} $out/tezi-image/wrapup.sh
+    cp ${imageJSON} $out/tezi-image/image.json
     mkdir -p $out/tezi-image/boot
     cp ${config.boot.kernelPackages.kernel}/${kernel} $out/tezi-image/boot/
     cp ${config.boot.kernelPackages.kernel}/dtbs/${toradex_apalis_imx6.dtb} $out/tezi-image/boot/
