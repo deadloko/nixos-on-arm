@@ -136,7 +136,7 @@ let
             partition_size_nominal = 16;
             want_maximised = false;
             content = {
-              filename = "Apalis-iMX6_Qt5-X11-Image.bootfs.tar.xz";
+              filename = "tezi-bootfs.tar.xz";
               filesystem_type = "FAT";
               label = "nixos_boot";
               mkfs_options = "";
@@ -144,10 +144,10 @@ let
             };
           }
           {
+            partition_size_nominal = 512;
+            want_maximised = true;
             content = {
-              partition_size_nominal = 512;
-              want_maximised = true;
-              filename = "Apalis-iMX6_Qt5-X11-Image.rootfs.tar.xz";
+              filename = "tezi-rootfs.tar.xz";
               filesystem_type = "ext4";
               label = "nixos_root";
               mkfs_options = "-E nodiscard";
