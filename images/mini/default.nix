@@ -11,6 +11,7 @@ with lib;
   # don't build documentation
   documentation.info.enable = mkDefault false;
   documentation.man.enable = mkDefault false;
+  documentation.nixos.enable = mkDefault false;
 
   # don't include a 'command not found' helper
   programs.command-not-found.enable = mkDefault false;

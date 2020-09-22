@@ -29,6 +29,8 @@ let platform = config.nixpkgs.crossSystem.platform.name; in
       nodePackages = super.nodePackages_6_x;
       # make a custom nodeEnv available
       nodeEnv = self.callPackage <nixpkgs/pkgs/development/node-packages/node-env.nix> {};
+      # libfido2 is not determenistic
+      openssh = super.openssh.override { withFIDO = false; };
     })
   ];
 
