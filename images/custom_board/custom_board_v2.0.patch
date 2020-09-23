@@ -1,0 +1,70 @@
+diff --git a/arch/arm/boot/dts/imx6qdl-apalis.dtsi b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+index 8380f1b..dc9247c 100644
+--- a/arch/arm/boot/dts/imx6qdl-apalis.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+@@ -482,52 +482,57 @@
+ 	status = "disabled";
+ };
+ 
++/* PAD Ctrl Values for Common Settings */
++#define PAD_CTRL_HYS_PU 0x1b0b0 /*(PAD_CTL_HYS | PAD_CTL_PUS_100K_UP | PAD_CTL_PUE | PAD_CTL_PKE | PAD_CTL_SPEED_MED | PAD_CTL_DSE_40ohm)*/
++#define PAD_CTRL_HYS_PD 0x130b0 /*(PAD_CTL_HYS | PAD_CTL_PUE | PAD_CTL_PKE | PAD_CTL_SPEED_MED | PAD_CTL_DSE_40ohm)*/
++#define PAD_CTRL_PU_22k 0x0f058 /*(PAD_CTL_PUS_22K_UP | PAD_CTL_PUE | PAD_CTL_PKE | PAD_CTL_SPEED_LOW | PAD_CTL_DSE_80ohm)*/
++
+ &iomuxc {
+ 	pinctrl_apalis_gpio1: gpio2io04grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_D4__GPIO2_IO04 0x130b0
++			MX6QDL_PAD_NANDF_D4__GPIO2_IO04		PAD_CTRL_HYS_PU	/* Apalis GPIO1 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio2: gpio2io05grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_D5__GPIO2_IO05 0x130b0
++			MX6QDL_PAD_NANDF_D5__GPIO2_IO05		PAD_CTRL_HYS_PU	/* Apalis GPIO2 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio3: gpio2io06grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_D6__GPIO2_IO06 0x130b0
++			MX6QDL_PAD_NANDF_D6__GPIO2_IO06		PAD_CTRL_HYS_PU	/* Apalis GPIO3 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio4: gpio2io07grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_D7__GPIO2_IO07 0x130b0
++			MX6QDL_PAD_NANDF_D7__GPIO2_IO07		PAD_CTRL_HYS_PU	/* Apalis GPIO4 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio5: gpio6io10grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_RB0__GPIO6_IO10 0x130b0
++			MX6QDL_PAD_NANDF_RB0__GPIO6_IO10	PAD_CTRL_HYS_PD	/* Apalis GPIO5 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio6: gpio6io09grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_NANDF_WP_B__GPIO6_IO09 0x130b0
++			MX6QDL_PAD_NANDF_WP_B__GPIO6_IO09	PAD_CTRL_HYS_PD	/* Apalis GPIO6 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio7: gpio1io02grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_GPIO_2__GPIO1_IO02 0x130b0
++			MX6QDL_PAD_GPIO_2__GPIO1_IO02		PAD_CTRL_HYS_PD	/* Apalis GPIO7 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_apalis_gpio8: gpio1io06grp {
+ 		fsl,pins = <
+-			MX6QDL_PAD_GPIO_6__GPIO1_IO06 0x130b0
++			MX6QDL_PAD_GPIO_6__GPIO1_IO06		PAD_CTRL_HYS_PD	/* Apalis GPIO8 */
+ 		>;
+ 	};
+ 
